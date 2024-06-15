@@ -9,6 +9,8 @@ resilience4j.retry:
     default:
       maxAttempts: 3
       waitDuration: 1000
+      enableExponentialBackoff: true
+      exponentialBackoffMultiplier: 10
       retryExceptions:
         - com.example.resilience4jdemo.exception.RetryException   # retryExceptions에 지정된 예외는 재시도
       ignoreExceptions:
